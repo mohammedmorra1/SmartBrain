@@ -20,6 +20,9 @@ const ImageLinkForm = () => {
   };
 
   const handleFetch = (imageUrl) => {
+    console.log("Fetching for image URL:", imageUrl);
+    console.log("Using MODEL_API:", process.env.MODEL_API);
+
     const raw = JSON.stringify({
       image_url: imageUrl,
     });
