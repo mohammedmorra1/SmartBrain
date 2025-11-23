@@ -56,7 +56,7 @@ const ImageLinkForm = () => {
 
             dispatch({ type: actions.SET_BOXES, payload: box });
           });
-          fetch("https://smartbrainbe-uc8o.onrender.com/image", {
+          fetch(`${process.env.SERVER_API}/image`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
