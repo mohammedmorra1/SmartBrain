@@ -35,7 +35,7 @@ const ImageLinkForm = () => {
       body: raw,
     };
 
-    fetch("https://facedet.onrender.com/detect_faces", requestOptions)
+    fetch(process.env.MODEL_API, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         const regions = result;
