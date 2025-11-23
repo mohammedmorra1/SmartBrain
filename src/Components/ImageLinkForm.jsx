@@ -21,7 +21,7 @@ const ImageLinkForm = () => {
 
   const handleFetch = (imageUrl) => {
     console.log("Fetching for image URL:", imageUrl);
-    console.log("Using MODEL_API:", process.env.MODEL_API);
+    console.log("Using MODEL_API:", import.meta.env.VITE_MODEL_API);
 
     const raw = JSON.stringify({
       image_url: imageUrl,
@@ -35,7 +35,7 @@ const ImageLinkForm = () => {
       body: raw,
     };
 
-    fetch(process.env.MODEL_API, requestOptions)
+    fetch(import.meta.env.VITE_MODEL_API, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         const regions = result;
@@ -56,7 +56,7 @@ const ImageLinkForm = () => {
 
             dispatch({ type: actions.SET_BOXES, payload: box });
           });
-          fetch(`${process.env.SERVER_API}/image`, {
+          fetch(`${import.meta.env.VITE_SERVER_API}/image`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
