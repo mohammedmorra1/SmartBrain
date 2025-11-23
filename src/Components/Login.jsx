@@ -6,8 +6,8 @@ import { useNavigate, Link } from "react-router";
 const Login = () => {
   const { state, dispatch, actions } = useContext(Context);
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("john@me.com");
+  const [password, setPassword] = useState("1234");
   const [error, setError] = useState("");
   const [showMsg, setShowMsg] = useState(false);
 
@@ -77,6 +77,9 @@ const Login = () => {
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Sign in to your account
           </h1>
+          <p className="text-sm text-green-400">
+            register an account or press sign in to login with placeholders
+          </p>
           <form className="space-y-4 md:space-y-6" action="#">
             <div>
               <label
@@ -90,7 +93,7 @@ const Login = () => {
                 name="email"
                 id="email"
                 className="rounded-lg w-full p-2.5 form-input"
-                placeholder="name@company.com"
+                placeholder="john@me.com"
                 required=""
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -110,7 +113,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="••••••••"
+                placeholder="1234"
                 className="rounded-lg w-full p-2.5 form-input"
                 required=""
                 onChange={(e) => {
