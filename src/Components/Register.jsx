@@ -14,13 +14,16 @@ const Register = () => {
   const [showMsg, setShowMsg] = useState(false);
 
   const register = async (name, email, password) => {
-    const data = await fetch(`${import.meta.env.VITE_SERVER_API}/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password }),
-    });
+    const data = await fetch(
+      `https://${import.meta.env.VITE_SERVER_API}/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      }
+    );
     const result = await data.json();
     if (result.ok) {
       navigate("/login");

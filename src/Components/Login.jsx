@@ -12,13 +12,16 @@ const Login = () => {
   const [showMsg, setShowMsg] = useState(false);
 
   const login = async (email, password) => {
-    const data = await fetch(`${import.meta.env.VITE_SERVER_API}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    }).catch((err) => {
+    const data = await fetch(
+      `https://${import.meta.env.VITE_SERVER_API}/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    ).catch((err) => {
       console.error("Login error");
     });
     const result = await data.json();
@@ -34,13 +37,16 @@ const Login = () => {
     }
   };
   const getProfile = async (id) => {
-    const data = await fetch(`${import.meta.env.VITE_SERVER_API}/profile`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id }),
-    });
+    const data = await fetch(
+      `https://${import.meta.env.VITE_SERVER_API}/profile`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      }
+    );
     const profile = await data.json();
     console.log("profile: ", profile);
     if (profile.ok) {

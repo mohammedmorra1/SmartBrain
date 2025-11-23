@@ -35,7 +35,7 @@ const ImageLinkForm = () => {
       body: raw,
     };
 
-    fetch(import.meta.env.VITE_MODEL_API, requestOptions)
+    fetch(`https://${import.meta.env.VITE_MODEL_API}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         const regions = result;
@@ -56,7 +56,7 @@ const ImageLinkForm = () => {
 
             dispatch({ type: actions.SET_BOXES, payload: box });
           });
-          fetch(`${import.meta.env.VITE_SERVER_API}/image`, {
+          fetch(`https://${import.meta.env.VITE_SERVER_API}/image`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
