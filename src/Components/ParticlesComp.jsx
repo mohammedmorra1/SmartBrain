@@ -132,7 +132,7 @@ const ParticlesComp = (props) => {
             },
           },
           push: {
-            default: true,
+            default: false,
             groups: [],
             quantity: 4,
           },
@@ -209,10 +209,10 @@ const ParticlesComp = (props) => {
             },
           },
           enable: true,
-          maxSpeed: 50,
+          maxSpeed: 3,
           mode: "bounce",
           overlap: {
-            enable: true,
+            enable: false,
             retries: 0,
           },
         },
@@ -302,7 +302,7 @@ const ParticlesComp = (props) => {
           },
           random: false,
           size: false,
-          speed: 10,
+          speed: 2,
           spin: {
             acceleration: 0,
             enable: false,
@@ -532,7 +532,7 @@ const ParticlesComp = (props) => {
         disable: false,
         reduce: {
           factor: 4,
-          value: true,
+          value: false,
         },
       },
     }),
