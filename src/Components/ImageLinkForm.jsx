@@ -3,7 +3,9 @@ import { Context } from "./Context";
 import "../App.css";
 
 const ImageLinkForm = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(
+    "https://www.lumierebeautyclinic.com.au/wp-content/uploads/2023/05/what-makes-a-face-attractive-Lumiere-Beauty-Clinic-scaled-thegem-blog-timeline-large.jpg"
+  );
   const { state, dispatch, actions } = useContext(Context);
 
   const createBox = ({ topRow, leftCol, bottomRow, rightCol }) => {
@@ -83,8 +85,13 @@ const ImageLinkForm = () => {
         <p>
           This Magic Brain will detect faces in your pictures, Give it a try :)
         </p>
+        <p className="text-sm text-green-400">
+          enter a JPEG image url, or press detect to detect for place holder
+          image
+        </p>
         <form className="formStyle flex shadow-xl h-20 w-full  items-center rounded p-6">
           <input
+            placeholder="https://www.lumierebeautyclinic.com.au/wp-content/uploads/2023/05/what-makes-a-face-attractive-Lumiere-Beauty-Clinic-scaled-thegem-blog-timeline-large.jpg"
             onChange={(e) => {
               setInput(e.target.value);
             }}
